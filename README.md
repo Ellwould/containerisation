@@ -10,8 +10,6 @@
 
 - ### For up to date infomation please see the FreeBSD handbook: https://docs.freebsd.org/en/books/handbook/jails or the FreeBSD jails manual page: https://man.freebsd.org/cgi/man.cgi?jail(8)
 
-- ### Diagram showing FreeBSD Jails connected via virtual ethernet interface pairs and virtual bridges:
-
 <br>
 
 ## GNU/Linux (Tested on Ubuntu 24.04 LTS)
