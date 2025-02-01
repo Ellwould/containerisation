@@ -1,0 +1,45 @@
+path=/zpool/jails/$name;
+host.hostname = $name.freebsd;
+exec.start = "/bin/sh /etc/rc";
+exec.stop = "/bin/sh /etc/rc.shutdown";
+exec.clean;
+vnet = "new";
+mount.devfs;
+persist;
+
+asterisk {
+vnet.interface = "epair1b";
+vnet.interface += "epair101b";
+depend = mysql;
+}
+
+dns {
+vnet.interface = "epair2b";
+}
+
+go {
+vnet.interface = "epair3b";
+vnet.interface += "epair103b";
+}
+
+grafana {
+vnet.interface = "epair4b";
+vnet.interface = "epair104b";
+depend = mysql;
+}
+
+mysql {
+vnet.interface = "epair5b";
+vnet.interface += "epair105b";
+}
+
+router {
+vnet.interface = "epair6b";
+vnet.interface += "epair106b";
+vnet.interface += "epair206b";
+}
+
+spare {
+vnet.interface = "epair7b";
+vnet.interface += "epair107b";
+}
