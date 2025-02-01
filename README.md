@@ -1,6 +1,6 @@
 # Containerisation
 
-## A collection of various containerisation methods within FreeBSD and GNU/Linux
+## A collection of various containerisation methods within FreeBSD and GNU/Linux (Tested on Ubuntu 24.04 LTS)
 
 <br>
 
@@ -14,7 +14,11 @@
 
 <br>
 
-## GNU/Linux
+## GNU/Linux (Tested on Ubuntu 24.04 LTS)
+
+- ### The Ubuntu directory in this repository contains anything relevent to containers within GNU/Linux, all testing done on Ubuntu version 24.04 LTS
+
+- ### The Ubuntu/Bash directory contains Bash scripts for creating containers without utilising a container runtime
 
 <br>
 
