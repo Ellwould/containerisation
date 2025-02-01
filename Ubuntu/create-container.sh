@@ -3,7 +3,7 @@
    #######      ###       ###
   #########      ###     ###
   ###             ###   ###       [Container View] Create Container shell script
-  ###              ### ###
+  ###              ### ###        Run this script first!
   #########   ###   #####   ###
    #######    ###    ###    ###
 
