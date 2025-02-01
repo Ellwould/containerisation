@@ -33,7 +33,7 @@ vnet.interface = "epair5b";
 vnet.interface += "epair105b";
 }
 
-router {
+firewall {
 vnet.interface = "epair6b";
 vnet.interface += "epair106b";
 vnet.interface += "epair206b";
