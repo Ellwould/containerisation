@@ -71,9 +71,9 @@ ifconfig epair105a up;
 ifconfig epair106a up;
 ifconfig epair107a up;
 ifconfig bridge2 up;
-#################################
-## Add jails to router bridge3 ##
-#################################
+###################################
+## Add jails to firewall bridge3 ##
+###################################
 ifconfig bridge3 addm epair206a;
 ifconfig epair206a up;
 ifconfig bridge3 up;
