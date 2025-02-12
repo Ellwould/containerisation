@@ -19,7 +19,7 @@
 
 <br>
 
-- <b>IPC (Inter Process Communication)</b> namespace added to the Linux Kernel in version 2.6.19, can isolate various IPC's within a container: https://man7.org/linux/man-pages/man7/ipc_namespaces.7.html
+- <b>IPC (Inter Process Communication)</b> namespace added to the Linux Kernel in version 2.6.19, can isolate various IPC within a container: https://man7.org/linux/man-pages/man7/ipc_namespaces.7.html
 
 <br>
 
@@ -33,15 +33,18 @@
 
 - <b>User</b> namespace added to the Linux Kernel in version 2.6.23 and development carried on until approximately Linux Kernel version 3.8, can provide a container separate user and group identifier number space: https://man7.org/linux/man-pages/man7/user_namespaces.7.html
 
+<br>
+
 Source: Namespaces in operation, part 1: namespaces overview, Michael Kerrisk, https://lwn.net/Articles/531114/
 <br>Definitely worth a read :)
 
 <br>
 
-- 
--
--
--
+- <b>cgroup (Control Group)</b> namespaces, can be used in conjunction with cgroups to set a limit on the amount of CPU and RAM available to a container: https://man7.org/linux/man-pages/man7/cgroup_namespaces.7.html
+
+<br>
+
+- <b>Time</b> namespace added to the Linux Kernal in version 5.6, can be used to set a different time inside a container compared to the host OS: https://man7.org/linux/man-pages/man7/time_namespaces.7.html
 
 <br>
 
@@ -49,20 +52,21 @@ Source: Namespaces in operation, part 1: namespaces overview, Michael Kerrisk, h
 
 <br>
 
-<b>GNU/Linux unshare command:</b> https://man7.org/linux/man-pages/man1/unshare.1.html
+<b>GNU/Linux unshare command</b> https://man7.org/linux/man-pages/man1/unshare.1.html
 
 <br>
 
-<b>Linux Kernel cgroups information:</b> https://man7.org/linux/man-pages/man7/cgroups.7.html
+<b>Linux Kernel cgroups (Control Groups)</b> added in Linux Kernal version 2.6.24: https://man7.org/linux/man-pages/man7/cgroups.7.html
 
 <br>
 
-<b>GNU/Linux cgcreate command:</b> https://manpages.ubuntu.com/manpages/oracular/man1/cgcreate.1.html
+<b>GNU/Linux cgcreate command</b> used to create cgroups: https://manpages.ubuntu.com/manpages/oracular/man1/cgcreate.1.html
 
 <br>
 
 <b>GNU/Linux Pivot command:</b> https://man7.org/linux/man-pages/man8/pivot_root.8.html
 
+<br>
 <br>
 
 ## FreeBSD
