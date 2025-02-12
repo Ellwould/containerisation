@@ -6,7 +6,7 @@
 
 ## GNU/Linux (Tested on Ubuntu 24.04 LTS)
 
-#### The /containerisation/Ubuntu/Bash directory contains Bash scripts for creating containers without utilising a container runtime
+#### The /containerisation/Ubuntu/Bash directory contains Bash scripts for creating containers without utilising a container runtime. (IN DEVELOPMENT)
 
 <br>
 
