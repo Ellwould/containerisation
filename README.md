@@ -10,9 +10,13 @@
 
 <br>
 
-### Diagram illastrating how an Ubuntu container has separate namespaces compared to it's host (shown with the different inode numbers) and how a virtual ethernet device (VETH) and bridge can be utilised to establish a connection between the container and the WAN (internet):
+### Diagram illastrating how an Ubuntu container has separate namespaces compared to it's host (shown with the different inode (index node) numbers) and how a virtual ethernet device (VETH) and bridge can be utilised to establish a connection between the container and the WAN (internet):
 
 ![image](https://github.com/Ellwould/containerisation/blob/main/container-diagram.jpg)
+
+#### Example: Command used to check the inode number of the PID namespace of the current shell: readlink /proc/$$/ns/pid
+
+<br>
 
 ### Namespaces within the Linux Kernel :
 - <b>Mount</b> first namespace created for the Linux Kernel, added to the Linux Kernal in version 2.4.19, can be used to control mount points within a container: https://man7.org/linux/man-pages/man7/mount_namespaces.7.html
