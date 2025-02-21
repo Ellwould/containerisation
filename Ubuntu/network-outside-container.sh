@@ -2,9 +2,9 @@
 
    #######      ###       ###     (IN DEVELOPMENT)
   #########      ###     ###
-  ###             ###   ###       [Container View] Network Container shell script
-  ###              ### ###        Run script after pivot-root-container.sh
-  #########   ###   #####   ###
+  ###             ###   ###       [Container View]
+  ###              ### ###        Shell script to setup and configure network interfaces on the host
+  #########   ###   #####   ###   Run script after pivot-root-container.sh
    #######    ###    ###    ###
 
 
