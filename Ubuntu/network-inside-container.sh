@@ -3,7 +3,7 @@
 # A script to be run inside the container to configure 
 # the other VETH endpoint and routing table
 
-# Run after 
+# Run after network-container.sh
 
 ifconfig lo up;
 
