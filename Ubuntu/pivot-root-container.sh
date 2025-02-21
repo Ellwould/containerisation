@@ -2,9 +2,9 @@
 
    #######      ###       ###     (IN DEVELOPMENT)
   #########      ###     ###
-  ###             ###   ###       [Container View] Pivot root shell script
-  ###              ### ###        Run script after namespace-cgroup.sh script
-  #########   ###   #####   ###
+  ###             ###   ###       [Container View]
+  ###              ### ###        Pivot root shell script
+  #########   ###   #####   ###   Run script after cgroup-namespace.sh script
    #######    ###    ###    ###
 
 mkdir /root/container-view-research/bash/rootfs/old_root;
