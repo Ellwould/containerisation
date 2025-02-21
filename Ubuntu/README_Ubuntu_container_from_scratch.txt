@@ -22,7 +22,8 @@ apt install net-tools joe htop iputils-ping less tree
 
 # Bash scripts and the order to run them:
 
-The first script to be run on the host is cgroup-namespace.sh, it creates a control group, limits the CPU and RAM and creates seprate namespaces.
+The first script to be run on the host is cgroup-namespace.sh, it creates a control group, 
+limits the CPU and RAM and creates seprate namespaces.
 cgroup-namespace.sh
 
 The second script to be run on the host is pivot-root-container.sh
