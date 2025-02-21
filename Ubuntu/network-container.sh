@@ -19,10 +19,10 @@
 ip link add ethPair1a type veth peer name ethPair1b;
 
 
-# Add the VETH device endpoint ethPair2b to the network namespace used by the container 
-# and add the VETH device endpoint ethPair2a to the default network namespace used by the host 
+# Add the VETH device endpoint ethPair1b to the network namespace used by the container 
+# and add the VETH device endpoint ethPair1a to the default network namespace used by the host 
 # using the ip command.
-ip link add ethPair2b netns $containerPid type veth peer name ethPair2a netns 1;
+ip link add ethPair1b netns $containerPid type veth peer name ethPair1a netns 1;
 
     ##############
    ##            ##
@@ -52,7 +52,7 @@ ip link set dev $hostInt master br0;
 
 
 # Add the VETH endpoint ethPair1a on the host to the bridge using the ip command
-ip link set dev ethPair2a master br0;
+ip link set dev ethPair1a master br0;
 
 # Alternatively the brctl command could be used to add the VETH device endpoint ethPair1a the to bridge
 # brctl addif br0 ethPair1a;
@@ -63,11 +63,11 @@ ip link set dev ethPair2a master br0;
    ##                         ##
     ###########################
 
-# Bring the VETH endpoint ethPair2a up using the ip command
-ip link set dev ethPair2a up;
+# Bring the VETH endpoint ethPair1a up using the ip command
+ip link set dev ethPair1a up;
 
-# Alternatively bring the VETH endpoint ethPair2a up using the ifconfig command
-# ifconfig ethPair2a up;
+# Alternatively bring the VETH endpoint ethPair1a up using the ifconfig command
+# ifconfig ethPair1a up;
 
 
 # Bring the hosts secondary interface up using the ip command
