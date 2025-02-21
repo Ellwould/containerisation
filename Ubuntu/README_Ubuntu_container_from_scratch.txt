@@ -11,10 +11,9 @@ inside the container from Ubuntu's repositary using Ubuntu's Advanced Package To
 is important to run the same version of Ubuntu on the host and the container if you are going 
 to use the following method to install packages inside the container.
 
-It is easy to install the packages above inside the containers file system, just comment out 
-the --net argument in the cgroup-namespace.sh script temporarily so the container shares the 
-hosts network namespace, edit the containers /etc/resolv.conf so it has a nameserver and then 
-run:
+To install the packages inside the containers file system, just comment out the --net argument 
+in the cgroup-namespace.sh script temporarily so the container shares the hosts network 
+namespace, edit the containers /etc/resolv.conf so it has a nameserver and then run:
 
 apt install net-tools joe htop iputils-ping less tree
 
