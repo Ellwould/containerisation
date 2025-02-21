@@ -7,6 +7,8 @@
   #########   ###   #####   ###   Run script after cgroup-namespace.sh script
    #######    ###    ###    ###
 
+
+
 mkdir /root/container-view-research/bash/rootfs/old_root;
 
 mount --bind /root/container-view-research/bash/rootfs /root/container-view-research/bash/rootfs;
