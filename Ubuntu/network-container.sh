@@ -3,7 +3,7 @@
    #######      ###       ###     (IN DEVELOPMENT)
   #########      ###     ###
   ###             ###   ###       [Container View] Network Container shell script
-  ###              ### ###        
+  ###              ### ###        Run script after pivot-root-container.sh
   #########   ###   #####   ###
    #######    ###    ###    ###
 
