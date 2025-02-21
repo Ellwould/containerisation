@@ -2,9 +2,9 @@
 
    #######      ###       ###     (IN DEVELOPMENT)
   #########      ###     ###
-  ###             ###   ###       [Container View] Create Container shell script
-  ###              ### ###        Run this script first!
-  #########   ###   #####   ###
+  ###             ###   ###       [Container View]
+  ###              ### ###        Shell script to setup cgroup and namespaces
+  #########   ###   #####   ###   Run this script first!
    #######    ###    ###    ###
 
 
