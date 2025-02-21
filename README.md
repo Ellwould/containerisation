@@ -23,7 +23,7 @@
 
 <br>
 
-- <b>UTS (UNIX Time-Sharing)</b> namespace added to the Linux Kernel in version 2.6.19, allows a separate hostname and NIS (Network Information Service) domain name in a container: https://man7.org/linux/man-pages/man7/uts_namespaces.7.html
+- <b>UTS (Unix Time-Sharing System)</b> namespace added to the Linux Kernel in version 2.6.19, allows a separate hostname and NIS (Network Information Service) domain name in a container: https://man7.org/linux/man-pages/man7/uts_namespaces.7.html
 
 <br>
 
