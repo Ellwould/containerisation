@@ -15,17 +15,20 @@
    ##                ##
     ##################
 
-# Create control group, they do not persist after reboot by default
-cgcreate -g cpu,memory:/container-view;
-cgcreate -g cpu,memory:/container-view/container1;
+# Allow sub control group to control memory, cpu and pids
+echo "+memory +cpu +pids" > /sys/fs/cgroup/cgroup.subtree_control;
 
-# Cannot edit write to files in /sys/fs/cgroup with text editer
-# Using the tool 
-cgset -r cgroup.subtree_control="+memory +cpu" container-view;
-cgset -r cpu.max="10000 100000" container-view/container1;
-cgset -r memory.max="500M" container-view/container1;
-cgset -r memory.swap.max="0" container-view/container1;
-cgset -r cgroup.procs=$pid container-view/container1;
+# Create control group, they do not persist after reboot by default
+mkdir -p /sys/fs/cgroup/container-view/container1;
+
+# Allow sub control group to control memory, cpu and pids
+echo "+memory +cpu +pids" > /sys/fs/cgroup/container-view/cgroup.subtree_control;
+
+# Add values for control group
+echo "500m" > /sys/fs/cgroup/container-view/container1/memory.max;
+echo "50000 200000" > /sys/fs/cgroup/container-view/container1/cpu.max;
+echo "0" > /sys/fs/cgroup/container-view/container1/memory.swap.max;
+echo $$ > /sys/fs/cgroup/container-view/container1/cgroup.procs;
 
     ##################
    ##                ##
