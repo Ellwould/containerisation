@@ -1,0 +1,90 @@
+# Set of instructions for setting up the containers file system
+
+
+
+# Make directory for containers and container1:
+mkdir -p /container/container1
+
+# Make directory for Ubuntu base tar file, signature and checksum:
+mkdir /container/base
+
+# Change directory into base directory:
+cd /container/base
+
+# Check your version of Ubuntu on the host, mine is 22.04.5, so I will
+# download Ubuntu base version 22.04.5:
+less /etc/os-release
+
+# Download Ubuntu base, signature and checksum:
+wget https://www.mirrorservice.org/sites/cdimage.ubuntu.com/cdimage/ubuntu-base/releases/22.04.5/release/ubuntu-base-22.04.5-base-amd64.tar.gz
+wget https://www.mirrorservice.org/sites/cdimage.ubuntu.com/cdimage/ubuntu-base/releases/22.04.5/release/SHA256SUMS.gpg
+wget https://www.mirrorservice.org/sites/cdimage.ubuntu.com/cdimage/ubuntu-base/releases/22.04.5/release/SHA256SUMS
+
+# Verify checksum against the GPG signature:
+gpg --verify SHA256SUMS.gpg SHA256SUMS
+
+# Output with no public key on the system:
+gpg: Signature made Thu 12 Sep 2024 19:20:56 BST
+gpg:                using RSA key 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+gpg: Can't check signature: No public key
+
+# Retrieve the public key from a keyserver:
+gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+
+# Output (public key imported):
+gpg: /root/.gnupg/trustdb.gpg: trustdb created
+gpg: key D94AA3F0EFE21092: public key "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+
+# Verify checksum against the GPG signature after importing the public key:
+gpg --verify SHA256SUMS.gpg SHA256SUMS
+
+# Output when running the gpg -verify command again:
+gpg: Signature made Thu 12 Sep 2024 19:20:56 BST
+gpg:                using RSA key 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+gpg: Good signature from "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+
+# Check the hash of the Ubuntu base tar file:
+sha256sum ubuntu-base-22.04.5-base-amd64.tar.gz
+
+# Output of sha256sum command:
+242cd8898b33ea806ef5f13b1076ed7c76f9f989d18384452f7166692438ff1a  ubuntu-base-22.04.5-base-amd64.tar.gz
+
+# Compare the hash to the hash inside the SHA256SUM file:
+less SHA256SUMS | grep "ubuntu-base-22.04.5-base-amd64.tar.gz"
+
+# If the hashes match then untar the Ubuntu base into /container/container1 directory:
+tar -xzvf /container/base/ubuntu-base-22.04.5-base-amd64.tar.gz -C /container/container1
+
+# List files and directories inside the /container/container1/:
+ls -lah /container/container1/
+
+# Output of ls -lah /container/container1/:
+total 68K
+drwxr-xr-x 17 root root 4.0K Feb 24 19:22 .
+drwxr-xr-x  4 root root 4.0K Feb 24 18:52 ..
+lrwxrwxrwx  1 root root    7 Sep 11 07:41 bin -> usr/bin
+drwxr-xr-x  2 root root 4.0K Apr 18  2022 boot
+drwxr-xr-x  2 root root 4.0K Sep 11 07:44 dev
+drwxr-xr-x 31 root root 4.0K Sep 11 07:44 etc
+drwxr-xr-x  2 root root 4.0K Apr 18  2022 home
+lrwxrwxrwx  1 root root    7 Sep 11 07:41 lib -> usr/lib
+lrwxrwxrwx  1 root root    9 Sep 11 07:41 lib32 -> usr/lib32
+lrwxrwxrwx  1 root root    9 Sep 11 07:41 lib64 -> usr/lib64
+lrwxrwxrwx  1 root root   10 Sep 11 07:41 libx32 -> usr/libx32
+drwxr-xr-x  2 root root 4.0K Sep 11 07:41 media
+drwxr-xr-x  2 root root 4.0K Sep 11 07:41 mnt
+drwxr-xr-x  2 root root 4.0K Sep 11 07:41 opt
+drwxr-xr-x  2 root root 4.0K Apr 18  2022 proc
+drwx------  2 root root 4.0K Sep 11 07:44 root
+drwxr-xr-x  4 root root 4.0K Sep 11 07:41 run
+lrwxrwxrwx  1 root root    8 Sep 11 07:41 sbin -> usr/sbin
+drwxr-xr-x  2 root root 4.0K Sep 11 07:41 srv
+drwxr-xr-x  2 root root 4.0K Apr 18  2022 sys
+drwxrwxrwt  2 root root 4.0K Sep 11 07:44 tmp
+drwxr-xr-x 14 root root 4.0K Sep 11 07:41 usr
+drwxr-xr-x 11 root root 4.0K Sep 11 07:44 var
