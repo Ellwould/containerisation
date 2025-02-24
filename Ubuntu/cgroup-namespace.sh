@@ -36,4 +36,8 @@ echo $$ > /sys/fs/cgroup/container-view/container1/cgroup.procs;
    ##                ##
     ##################
 
+# Container has own network namespace:
 unshare --time --uts --pid --mount --mount-proc --ipc --net --cgroup --fork /bin/bash;
+
+# Sharing host network namespace:
+# unshare --time --uts --pid --mount --mount-proc --ipc --cgroup --fork /bin/bash;
