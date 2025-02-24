@@ -9,11 +9,11 @@
 
 
 
-mkdir /root/container-view-research/bash/rootfs/old_root;
+mkdir /container/container1/old_root;
 
-mount --bind /root/container-view-research/bash/rootfs /root/container-view-research/bash/rootfs;
+mount --bind /container/container1 /container/container1;
 
-cd /root/container-view-research/bash/rootfs;
+cd /container/container1;
 
 pivot_root . ./old_root;
 
