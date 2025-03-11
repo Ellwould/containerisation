@@ -13,9 +13,7 @@ mkdir /container/container1/old_root;
 
 mount --bind /container/container1 /container/container1;
 
-cd /container/container1;
-
-pivot_root . ./old_root;
+pivot_root /container/container1 /container/container1/old_root;
 
 cd /;
 
