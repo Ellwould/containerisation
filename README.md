@@ -1,16 +1,31 @@
 # nsbox (namespace box)
 
-## A collection of various containerisation methods within FreeBSD Jails and GNU/Linux (Tested on Ubuntu 24.04 LTS)
+<br>
+
+## nsbox (namespace box) 2 programs written in Go that creates containers via the cloning of namespaces in the Linux kernel, creation of cgroups (control groups), virtual networking and pivot root.
+
+<br>
+
+### nsbox_rootuser.go - Without user namespace, run as host root user
+### nsbox_nonrootuser.go - With user namespace, run as host non-root
+
+<br>
+
+---
+
+<br>
+
+## Also a collection of various containerisation methods within FreeBSD Jails and GNU/Linux (Tested on Ubuntu 24.04 LTS)
 
 <br>
 
 ## GNU/Linux (Tested on Ubuntu 24.04 LTS)
 
-#### The /containerisation/Ubuntu/Bash directory contains Bash scripts for creating containers without utilising a container runtime. (IN DEVELOPMENT)
+#### The /nsbox/Ubuntu/Bash directory contains Bash scripts for creating containers without utilising a container runtime. (IN DEVELOPMENT)
 
 <br>
 
-### Diagram illastrating how an Ubuntu container has separate namespaces compared to it's host (shown with the different inode (index node) numbers) and how a virtual ethernet device (VETH) and bridge can be utilised to establish a connection between the container and the WAN (internet):
+#### Diagram illastrating how an Ubuntu container has separate namespaces compared to it's host (shown with the different inode (index node) numbers) and how a virtual ethernet device (VETH) and bridge can be utilised to establish a connection between the container and the WAN (internet):
 
 ![image](https://github.com/Ellwould/containerisation/blob/main/container-diagram.jpg)
 
@@ -75,6 +90,9 @@ Source: Namespaces in operation, part 1: namespaces overview, Michael Kerrisk, h
 <b>GNU/Linux Pivot command:</b> https://man7.org/linux/man-pages/man8/pivot_root.8.html
 
 <br>
+
+---
+
 <br>
 
 ## FreeBSD
