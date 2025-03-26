@@ -10,6 +10,8 @@
 ### nsbox_rootuser.go - Without user namespace, run as host root user
 ### nsbox_nonrootuser.go - With user namespace, run as host non-root
 
+#### (For easier development nsbox_nonrootuser.go was created separately; eventually both nsbox_rootuser.go & nsbox_nonrootuser.go will merge into one program with options of which namespaces the end user wants to be cloned.)
+
 <br>
 
 ---
