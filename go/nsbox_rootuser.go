@@ -1,5 +1,7 @@
+// Package clause main, to make sure the source code is executed directly
 package main
 
+// Import statement to get other packages needed in this program
 import (
 	"fmt"
 	"os"
@@ -10,10 +12,10 @@ import (
 	"syscall"
 )
 
-// Background space width constant
+// Background space width integer constant
 const bgWidth int = 54
 
-// Option title names constant
+// Option title name string constants
 const opt1Name, opt2Name, opt3Name, opt4Name, opt5Name, opt6Name string = "Run Container",
 	"NOT IN USE",
 	"NOT IN USE",
@@ -24,7 +26,7 @@ const opt1Name, opt2Name, opt3Name, opt4Name, opt5Name, opt6Name string = "Run C
 // American National Standards Institute (ANSI) reset colour code
 var resetColour = "\033[0m"
 
-// American National Standards Institute (ANSI) text colour codess
+// American National Standards Institute (ANSI) text colour codes
 var textRed = "\033[31m"
 var textGreen = "\033[32m"
 var textYellow = "\033[33m"
@@ -46,7 +48,7 @@ var bgCyan = "\033[46m"
 var bgWhite = "\033[47m"
 var bgBlack = "\033[40m"
 
-// Clear Screen Function for GNU/Linux
+// Clear screen function for GNU/Linux OS's
 func clearScreen() {
 	fmt.Print("\033[H\033[2J")
 }
@@ -55,10 +57,11 @@ func clearScreen() {
 func continueButton() {
 	fmt.Println("   " + textBoldBlack + "Press the enter/return button to continue..." + resetColour)
 	fmt.Scanln()
+	// Run main menu function
 	mainMenu()
 }
 
-// Function to create option titles in the mainMenu function
+// Function to create option titles in the main menu function
 func optTitle(title string, textColour string, bgColour string) {
 	boarderSpace := strings.Repeat(" ", len(title)*3)
 	titleSpace := strings.Repeat(" ", len(title))
@@ -69,11 +72,12 @@ func optTitle(title string, textColour string, bgColour string) {
 	fmt.Println("")
 }
 
-// Function to create space based on a number
+// Function to create white background space based on a integer
 func background(numberSpaces int) {
 	fmt.Println(bgWhite, strings.Repeat(" ", numberSpaces), resetColour)
 }
 
+// Option 1 function
 func opt1() {
 	// Bash shell to be executed
 	shellCmd := exec.Command("/bin/bash")
@@ -81,11 +85,11 @@ func opt1() {
 	shellCmd.Stdin = os.Stdin
 	shellCmd.Stdout = os.Stdout
 	shellCmd.Stderr = os.Stderr
-	// Clone the namespaces inside the Linux kernel
+	// Clone the namespaces inside the Linux kernel via system calls
 	shellCmd.SysProcAttr = &syscall.SysProcAttr{
 		Cloneflags: syscall.CLONE_NEWNS | syscall.CLONE_NEWUTS | syscall.CLONE_NEWIPC | syscall.CLONE_NEWPID | syscall.CLONE_NEWNET | syscall.CLONE_NEWCGROUP | syscall.CLONE_NEWTIME,
 	}
-	// Variable for nsbox Processor IDentification (PID) that also converts it in to a string
+	// Variable for nsbox PID (Processor IDentification) that also converts it in to data type string
 	nsboxPid := strconv.Itoa(os.Getpid())
 	fmt.Println("  "+bgGreen+textBoldWhite, " nsbox running as user:", os.Getuid(), "as PID:", nsboxPid, resetColour)
 	// Run pivot root function
@@ -94,6 +98,7 @@ func opt1() {
 	shellCmd.Run()
 }
 
+// Option 1 function for pivot root on container
 func opt1PivotRoot() {
 	// Variable for container Processor IDentification (PID) that also converts it in to a string
 	containerPid := strconv.Itoa(os.Getpid())
@@ -105,10 +110,11 @@ func opt1PivotRoot() {
 	os.Chdir("/")
 }
 
-// Futute use
+// // Option 2 function (Future use)
 func opt2() {
 }
 
+// Main menu function to select options
 func mainMenu() {
 	// Clears the screen on GNU/Linux
 	clearScreen()
@@ -121,6 +127,7 @@ func mainMenu() {
 	background(bgWidth)
 	background(bgWidth)
 
+	// String array of options for main menu
 	option := []string{
 		bgCyan + " " + opt1Name + "         ",
 		bgBlue + " " + opt2Name + "            ",
@@ -128,6 +135,7 @@ func mainMenu() {
 		bgYellow + " " + opt4Name + "            ",
 		bgBlack + " " + opt5Name + "            ",
 		bgRed + " " + opt6Name + "            "}
+	// A loop to print string array options
 	for index, value := range option {
 		fmt.Print(bgWhite+textBoldWhite+"  ", value, "[", index+1, "] ", resetColour)
 		background(25)
@@ -136,10 +144,12 @@ func mainMenu() {
 
 	fmt.Println("")
 	fmt.Print(textBoldBlack + "   Please enter an option: ")
+	// User input of option
 	var input string
 	fmt.Scan(&input)
 	fmt.Println("" + resetColour)
 
+	// Conditional statement for option selected
 	if input == "1" {
 		// Option 1 to run container
 		optTitle(opt1Name, textBoldWhite, bgCyan)
@@ -153,6 +163,7 @@ func mainMenu() {
 		optTitle("Exited nsbox", textBoldWhite, bgRed)
 		os.Exit(0)
 	} else {
+		// Display message telling user input needs to be a number from 1 to 6
 		background(bgWidth)
 		fmt.Print(bgWhite+"        "+resetColour+bgRed+textBoldWhite+" The input must be a number between 1-", len(option), " "+resetColour)
 		background(6)
@@ -162,10 +173,13 @@ func mainMenu() {
 	}
 }
 
+// Main function
 func main() {
+	// Check if OS is GNU/Linux
 	if runtime.GOOS != "linux" {
 		fmt.Println("Operating system must be GNU/Linux to work")
 	} else {
+		// Run main menu function
 		mainMenu()
 	}
 }
