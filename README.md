@@ -15,7 +15,7 @@
 
 <br>
 
-## Also a collection of various containerisation methods within FreeBSD Jails and GNU/Linux (Tested on Ubuntu 24.04 LTS)
+## Also this repository contains a collection of containerisation methods within FreeBSD and GNU/Linux (Tested on Ubuntu 24.04 LTS)
 
 <br>
 
