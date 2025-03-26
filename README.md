@@ -1,4 +1,4 @@
-# Containerisation
+# nsbox (namespace box)
 
 ## A collection of various containerisation methods within FreeBSD Jails and GNU/Linux (Tested on Ubuntu 24.04 LTS)
 
