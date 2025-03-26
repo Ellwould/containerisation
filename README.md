@@ -14,6 +14,10 @@
 
 <br>
 
+### nsbox main menu:
+
+![image](https://github.com/Ellwould/nsbox/blob/main/image/nsbox-main-menu.jpeg)
+
 ---
 
 <br>
