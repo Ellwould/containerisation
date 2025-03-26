@@ -15,7 +15,7 @@
 
 <br>
 
-## Also this repository contains a collection of containerisation methods within FreeBSD and Bash scripts for creating GNU/Linux containers (Tested on Ubuntu 24.04 LTS)
+## Also this repository contains a collection of containerisation methods within FreeBSD and Bash scripts for creating GNU/Linux containers (Ubuntu 24.04 LTS)
 
 <br>
 
