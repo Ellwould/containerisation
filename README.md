@@ -18,6 +18,20 @@
 
 ![image](https://github.com/Ellwould/nsbox/blob/main/image/nsbox-main-menu.jpeg)
 
+### Input validation on nsbox main menu:
+
+![image](https://github.com/Ellwould/nsbox/blob/main/image/nsbox-input-validation.jpeg)
+
+### Option 1 selected on nsbox, Bash shell inside a container with a list of the file system and the inode numbers using command ls with arguments lai:
+
+![image](https://github.com/Ellwould/nsbox/blob/main/image/nsbox-bash-shell-inside-container.jpeg)
+
+### List of PID's for nsbox and the nsbox container
+
+![image](https://github.com/Ellwould/nsbox/blob/main/image/nsbox-and-container-pid-on-host.jpeg)
+
+<br>
+
 ---
 
 <br>
